@@ -18,6 +18,12 @@
         height: auto;
         margin: 0 auto;
     }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 20px; /* Добавляем небольшие отступы справа и слева */
+    }
     #menuToggle {
         position: fixed;
         top: 20px;
@@ -27,31 +33,30 @@
     }
     #menu {
         position: absolute;
-        top: calc(20px + 50px); /* Отступаем от верхней границы на высоту иконки меню */
+        top: calc(20px + 50px);
         right: 20px;
         background-color: rgba(255, 255, 255, 0.9);
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        z-index: 999; /* Установим z-index меньше, чем у кнопки меню */
-        display: none; /* скрываем меню изначально */
+        z-index: 999;
+        display: none;
     }
     .menu-item a {
         color: black;
         text-decoration: none;
         font-size: 18px;
-        display: block; /* Добавим блочное отображение, чтобы элементы были на разных строках */
-        margin-bottom: 10px; /* Добавим отступ между пунктами меню */
+        display: block;
+        margin-bottom: 10px;
     }
 </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <img class="logo" src="your_logo.png" alt="Логотип Janel Yerlanovna">
+        <h1 style="text-align: center; color: white; font-size: 2em;">Төртбұрыш</h1>
+        <p style="color: white; font-size: 1.2em;">Төртбұрыштардың түрлері - <strong>параллелограмм, трапеция, ромб, тіктөртбұрыш</strong> және <strong>шаршы</strong>.</p>
     </div>
-    <h1 style="text-align: center; color: white; font-size: 2em;">Төртбұрыш</h1>
-    <p style="color: white; text-align: center;">Төртбұрыш (грек тілінен. Τετραγωνον) - төрт нүктеден (шыңдардан) тұратын геометриялық фигура (көпбұрыш), олардың үшеуі бір түзуде жатпайды және осы нүктелерді тізбектей байланыстыратын төрт сегмент (қабырғалар).</p>
-    <p style="color: white; text-align: center; font-weight: bold;">Төртбұрыштардың түрлері - параллелограмм, трапеция, ромб, тіктөртбұрыш және шаршы.</p>
     <div id="menuToggle">
         <img src="меню.png" alt="Меню" width="50" height="50">
         <div id="menu">
@@ -69,7 +74,7 @@
         var menu = document.getElementById('menu');
 
         menuToggle.addEventListener('click', function(event) {
-            event.stopPropagation(); // предотвращаем закрытие меню при клике на иконку
+            event.stopPropagation();
             if (menu.style.display === 'block') {
                 menu.style.display = 'none';
             } else {
@@ -78,11 +83,11 @@
         });
 
         menu.addEventListener('click', function(event) {
-            event.stopPropagation(); // предотвращаем закрытие меню при клике внутри него
+            event.stopPropagation();
         });
 
         document.addEventListener('click', function() {
-            menu.style.display = 'none'; // закрываем меню при клике вне него
+            menu.style.display = 'none';
         });
     </script>
 </body>
